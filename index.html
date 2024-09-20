@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Digit Recognition</h1>
+        <p>Draw a number and click submit to see if we can guess it correctly.</p>
+
+        <!-- Control buttons on top -->
+        <div class="controls">
+            <button id="clearBtn">Clear</button>
+            <button id="eraserBtn">Eraser</button>
+            <button id="drawBtn" class="active">Draw</button>
+            <button id="submitBtn">Submit</button>
+        </div>
+
+        <!-- Canvas area -->
+        <canvas id="drawingCanvas" width="280" height="280"></canvas>
+
+        <!-- Result display area -->
+        <div class="result" id="result">
+            <!-- Prediction result will appear here -->
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript for the canvas -->
+    <script src="js/canvas.js"></script>
+</body>
+</html>

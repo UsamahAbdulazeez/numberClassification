@@ -77,7 +77,12 @@ drawBtn.addEventListener('click', () => {
 let model;
 async function loadModel() {
     try {
-        model = await tf.loadLayersModel('./tfjs_mnist_model/model.json');
+        // Try loading EMNIST model first, fall back to MNIST if not available
+        try {
+            model = await tf.loadLayersModel('./tfjs_emnist_model/model.json');
+        } catch {
+            model = await tf.loadLayersModel('./tfjs_mnist_model/model.json');
+        }
         console.log("Model loaded successfully");
     } catch (error) {
         console.error("Error loading model: ", error);
